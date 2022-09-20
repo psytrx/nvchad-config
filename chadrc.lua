@@ -52,10 +52,11 @@ M.plugins = {
         local sources = {
           -- webdev stuff
           b.formatting.prettier.with {
-            extra_filetypes = { "svelte", "md" },
+            extra_filetypes = { "svelte", "md", "json" },
           },
 
           b.formatting.gofmt,
+          b.formatting.goimports,
         }
 
         null_ls.setup {
@@ -64,6 +65,10 @@ M.plugins = {
         }
       end,
     },
+
+    ["nvim-treesitter/nvim-treesitter-context"] = {
+      after = "nvim-treesitter",
+    }
   },
 
   override = {

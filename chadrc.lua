@@ -28,7 +28,7 @@ M.plugins = {
         local on_attach = configs.on_attach
         local capabilities = configs.capabilities
 
-        local servers = { "html", "cssls", "svelte", "tsserver", "emmet_ls", "gopls", "marksman" }
+        local servers = { "html", "cssls", "svelte", "tsserver", "emmet_ls", "gopls", "marksman", "vls" }
 
         for _, lsp in ipairs(servers) do
           lspconfig[lsp].setup {
@@ -55,8 +55,8 @@ M.plugins = {
             extra_filetypes = { "svelte", "md", "json" },
           },
 
-          b.formatting.gofmt,
-          b.formatting.goimports,
+          b.formatting.gofumpt,
+          b.formatting.goimports_reviser,
         }
 
         null_ls.setup {

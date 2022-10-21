@@ -3,5 +3,5 @@
 My config files for [NvChad](https://nvchad.github.io/).
 
 ```bash
-cp * ~/.config/nvim/lua/custom/
+cp ./* ~/.config/nvim/lua/custom/
 ```

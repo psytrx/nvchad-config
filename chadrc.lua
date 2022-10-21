@@ -55,7 +55,8 @@ M.plugins = {
         },
 
         b.formatting.gofumpt,
-        b.formatting.goimports_reviser,
+        -- b.formatting.goimports_reviser,
+        b.formatting.goimports,
 
         b.formatting.stylua,
       }
@@ -64,6 +65,13 @@ M.plugins = {
         debug = true,
         sources = sources,
       }
+    end,
+  },
+
+  ["ggandor/leap.nvim"] = {
+    config = function()
+      local leap = require "leap"
+      leap.add_default_mappings()
     end,
   },
 

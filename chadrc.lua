@@ -95,6 +95,8 @@ M.plugins = {
   },
 
   ["terrastruct/d2-vim"] = {},
+
+  ["mbbill/undotree"] = {},
 }
 
 M.mappings = {
@@ -104,6 +106,12 @@ M.mappings = {
       ["<C-u>"] = { "<C-u>zz", "Jump half screen up" },
       ["n"] = { "nzz", "Jump to next occurence" },
       ["N"] = { "Nzz", "Jump to previous occurence" },
+    },
+  },
+
+  undotree = {
+    n = {
+      ["<leader>ut"] = { vim.cmd.UndotreeToggle, "Toggle Undotree" },
     },
   },
 }

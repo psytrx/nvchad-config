@@ -27,7 +27,7 @@ M.plugins = {
       local on_attach = configs.on_attach
       local capabilities = configs.capabilities
 
-      local servers = { "html", "cssls", "svelte", "tsserver", "emmet_ls", "gopls", "marksman", "vls" }
+      local servers = { "html", "cssls", "svelte", "tsserver", "emmet_ls", "gopls", "marksman", "vls", "rust_analyzer" }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
@@ -59,6 +59,9 @@ M.plugins = {
         b.formatting.goimports,
 
         b.formatting.stylua,
+        b.formatting.rustfmt.with {
+          filetype = "rust",
+        },
       }
 
       null_ls.setup {
@@ -66,6 +69,10 @@ M.plugins = {
         sources = sources,
       }
     end,
+  },
+
+  ["folke/which-key.nvim"] = {
+    disable = false,
   },
 
   ["ggandor/leap.nvim"] = {
@@ -86,8 +93,17 @@ M.plugins = {
       }
     end,
   },
+
+  ["terrastruct/d2-vim"] = {},
 }
 
-M.mappings = {}
+M.mappings = {
+  custom = {
+    n = {
+      ["<C-d>"] = { "<C-d>zz", "jump half screen down" },
+      ["<C-u>"] = { "<C-u>zz", "jump half screen up" },
+    },
+  },
+}
 
 return M

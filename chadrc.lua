@@ -100,8 +100,10 @@ M.plugins = {
 M.mappings = {
   custom = {
     n = {
-      ["<C-d>"] = { "<C-d>zz", "jump half screen down" },
-      ["<C-u>"] = { "<C-u>zz", "jump half screen up" },
+      ["<C-d>"] = { "<C-d>zz", "Jump half screen down" },
+      ["<C-u>"] = { "<C-u>zz", "Jump half screen up" },
+      ["n"] = { "nzz", "Jump to next occurence" },
+      ["N"] = { "Nzz", "Jump to previous occurence" },
     },
   },
 }

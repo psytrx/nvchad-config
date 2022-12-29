@@ -97,6 +97,12 @@ M.plugins = {
   ["terrastruct/d2-vim"] = {},
 
   ["mbbill/undotree"] = {},
+
+  ["glacambre/firenvim"] = {
+    run = function()
+      vim.fn["firenvim#install"](0)
+    end,
+  },
 }
 
 M.mappings = {

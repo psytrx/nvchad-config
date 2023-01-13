@@ -3,6 +3,5 @@
 -- you can even override default options here (core/options.lua)
 
 vim.opt.relativenumber = true
-vim.opt.wrap = false
 
 -- vim.g.luasnippets_path = ""

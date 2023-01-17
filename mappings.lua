@@ -2,16 +2,16 @@ local M = {}
 
 M.custom = {
   n = {
-    ["<C-d>"] = { "<C-d>zz", "Jump half screen down" },
-    ["<C-u>"] = { "<C-u>zz", "Jump half screen up" },
-    ["n"] = { "nzz", "Jump to next occurence" },
-    ["N"] = { "Nzz", "Jump to previous occurence" },
+    ["<C-d>"] = { "<C-d>zz", "jump half screen down" },
+    ["<C-u>"] = { "<C-u>zz", "jump half screen up" },
+    ["n"] = { "nzz", "jump to next occurence" },
+    ["N"] = { "Nzz", "jump to previous occurence" },
   },
 }
 
 M.undotree = {
   n = {
-    ["<leader>ut"] = { vim.cmd.UndotreeToggle, "Toggle Undotree" },
+    ["<leader>ut"] = { vim.cmd.UndotreeToggle, "toggle Undotree" },
   },
 }
 
@@ -27,7 +27,7 @@ M.harpoon = {
       function()
         require("harpoon.ui").toggle_quick_menu()
       end,
-      "Open harpoon quick menu",
+      "open harpoon quick menu",
     },
     ["<leader>a"] = {
       function()
@@ -35,10 +35,10 @@ M.harpoon = {
       end,
       "Add harpoon mark",
     },
-    ["<leader>1"] = { fn_harpoon_nav_file(1), "Open harpoon file 1" },
-    ["<leader>2"] = { fn_harpoon_nav_file(2), "Open harpoon file 2" },
-    ["<leader>3"] = { fn_harpoon_nav_file(3), "Open harpoon file 3" },
-    ["<leader>4"] = { fn_harpoon_nav_file(4), "Open harpoon file 4" },
+    ["<leader>1"] = { fn_harpoon_nav_file(1), "open harpoon file 1" },
+    ["<leader>2"] = { fn_harpoon_nav_file(2), "open harpoon file 2" },
+    ["<leader>3"] = { fn_harpoon_nav_file(3), "open harpoon file 3" },
+    ["<leader>4"] = { fn_harpoon_nav_file(4), "open harpoon file 4" },
   },
 }
 

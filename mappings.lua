@@ -42,4 +42,16 @@ M.harpoon = {
   },
 }
 
+M.copilot = {
+  n = {
+    ["<leader>cp"] = { ":Copilot panel<CR>", "open Copilot panel" },
+  },
+  i = {
+    ["<C-k>"] = { "<Plug>(copilot-previous)", "cycle to previous Copilot suggestion" },
+    ["<C-j>"] = { "<Plug>(copilot-next)", "cycle to next Copilot suggestion" },
+    ["<C-i>"] = { "<Plug>(copilot-suggest)", "request a Copilot suggestion" },
+    ["<C-o>"] = { "copilot#Accept('<CR>')", "accept Copilot suggestion", { expr = true } },
+  },
+}
+
 return M

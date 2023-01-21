@@ -11,14 +11,17 @@ M["tpope/vim-surround"] = {}
 
 M["neovim/nvim-lspconfig"] = {
   config = function()
+    local on_attach = require("plugins.configs.lspconfig").on_attach
+    local capabilities = require("plugins.configs.lspconfig").capabilities
+
     local lspconfig = require "lspconfig"
 
-    local servers = { "html", "cssls", "svelte", "tsserver", "emmet_ls", "gopls", "marksman", "vls", "rust_analyzer" }
+    local servers = { "html", "cssls", "svelte", "tsserver", "emmet_ls", "gopls", "marksman", "rust_analyzer" }
 
     for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
-        on_attach = lspconfig.on_attach,
-        capabilities = lspconfig.capabilities,
+        on_attach = on_attach,
+        capabilities = capabilities,
       }
     end
   end,
@@ -26,6 +29,7 @@ M["neovim/nvim-lspconfig"] = {
 
 M["jose-elias-alvarez/null-ls.nvim"] = {
   after = "nvim-lspconfig",
+
   config = function()
     local present, null_ls = pcall(require, "null-ls")
     if not present then
@@ -85,5 +89,11 @@ M["terrastruct/d2-vim"] = {}
 M["mbbill/undotree"] = {}
 
 M["ThePrimeagen/harpoon"] = {}
+
+M["github/copilot.vim"] = {
+  config = function()
+    -- vim.api.nvim_set_keymap("i", "<C-o>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+  end,
+}
 
 return M

@@ -92,7 +92,10 @@ M["ThePrimeagen/harpoon"] = {}
 
 M["github/copilot.vim"] = {
   config = function()
-    -- vim.api.nvim_set_keymap("i", "<C-o>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+    -- vim.api.nvim_exec 'imap <silent><script><expr> <C-o> copilot#Accept("\\<CR>")'
+    -- vim.api.nvim_exec "let g:copilot_no_tab_map = v:true"
+    vim.cmd 'imap <silent><script><expr> <C-o> copilot#Accept("\\<CR>")'
+    vim.cmd "let g:copilot_no_tab_map = v:true"
   end,
 }
 

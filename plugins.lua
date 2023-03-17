@@ -16,7 +16,7 @@ M["neovim/nvim-lspconfig"] = {
 
     local lspconfig = require "lspconfig"
 
-    local servers = { "html", "cssls", "svelte", "tsserver", "emmet_ls", "gopls", "marksman", "rust_analyzer" }
+    local servers = { "html", "cssls", "svelte", "tsserver", "emmet_ls", "gopls", "marksman", "rust_analyzer", "tailwindcss" }
 
     for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
@@ -98,5 +98,6 @@ M["github/copilot.vim"] = {
     vim.cmd "let g:copilot_no_tab_map = v:true"
   end,
 }
+
 
 return M
